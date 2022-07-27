@@ -38,6 +38,7 @@ We use three benchmark datasets
 A variety of artificially and semi-artificially generated graph datasets. It is composed of datasets such as `PATTERN`, `CLUSTER`, `MNIST`, `CIFAR-10`, `TSP`, `CSL`. 
 
 `Reference`: https://arxiv.org/abs/2003.00982
+
 `Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
 
 #### Planetoid-1:
@@ -45,6 +46,7 @@ A variety of artificially and semi-artificially generated graph datasets. It is 
 `Planetoid` dataset comprising of citation network datasets `Cora`, `Citeseer`, and `Pubmed`. These are three benchmark datasets used for semi-supervised node classification tasks. Each of the mentioned graph datasets contains bag-of-words representation of documents and citation links between the documents
 
 `Reference`: https://arxiv.org/pdf/1603.08861.pdf
+
 `Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
 
 #### MoleculeNet:
@@ -64,6 +66,7 @@ Within the `MoleculetNet`, we are interested to benchmark, Quantum Mechanics, an
 - Lipophilicity: Experimental results of octanol/water distribution coefficient(logD at pH 7.4).
 
 `Reference`: https://moleculenet.org/datasets-1
+
 `Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
 
 ## Results
