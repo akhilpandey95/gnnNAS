@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "gnnnas"
-version = "0.1.0"
+version = "0.0.2"
 description = "Library to help write symbolic programs to generate expressive message passing neural networks."
 authors = ["Your Name <you@example.com>"]
 license = "MIT"
