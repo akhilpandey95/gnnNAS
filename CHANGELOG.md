@@ -2,6 +2,21 @@
 
 
 
+## v0.0.2 (2023-10-19)
+
+### Fix
+
+* fix: updated toml ([`5726009`](https://github.com/akhilpandey95/gnnNAS/commit/572600924023add9318da42bd06dbcb4c7286f0e))
+
+### Unknown
+
+* fix:bumping version ([`9786902`](https://github.com/akhilpandey95/gnnNAS/commit/97869021db5d2ffca042e9b1fd30286e6f693f29))
+
+* Merge branch &#39;main&#39; of github.com:akhilpandey95/gnnNAS ([`b5b14bf`](https://github.com/akhilpandey95/gnnNAS/commit/b5b14bf452ee1d96e01a9d65ed3e378560eac920))
+
+* fixed dependencies; enabled tests ([`481f30f`](https://github.com/akhilpandey95/gnnNAS/commit/481f30fc0e706de7c034fb18fd73441f3d05e8fe))
+
+
 ## v0.0.1 (2023-10-19)
 
 ### Fix
