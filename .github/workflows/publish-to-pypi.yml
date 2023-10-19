@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  Quality:
+    runs-on: ubuntu-latest
+    environment: github-pages
+    permissions:
+      id-token: write
+      contents: write
+      pages: write
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v3
+      with:
+        python-version: 3.10
+
+    - name: Install Python Poetry
+      uses: abatilo/actions-poetry@v2.3.0
+
+    - name: Configure poetry
+      shell: bash
+      run: python -m poetry config virtualenvs.in-project true
+
+    - name: View poetry version
+      run: poetry --version
+
+    - name: Install dependencies
+      run: |
+        python -m poetry install
+
+    - name: Test
+      run: poetry run python3 -m unittest discover
+
+    - name: Install pdoc3
+      run: pip install pdoc3
+
+    - name: Generate documentation
+      run: poetry run pdoc --html gnnnas --force
+
+    - name: Upload documentation to GitHub Pages
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: ./html/gnnnas
+
+    - name: Deploy documentation to GitHub Pages
+      uses: actions/deploy-pages@v2
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+
+  Release:
+    needs: Quality
+    if: |
+      github.event_name == 'push' && 
+      github.ref == 'refs/heads/main' && 
+      !contains ( github.event.head_commit.message, 'chore(release)' )
+
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.10
+
+      - name: Install Python Poetry
+        uses: abatilo/actions-poetry@v2.3.0
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check release status
+        id: release-status
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          pip install python-semantic-release
+          if semantic-release --strict version
+          then
+            echo "Releasing new version."
+          else
+            echo "Skipping release steps."
+          fi
+
+      - if: steps.release-status.outputs.released == 'true'
+        name: Release to PyPI
+        id: pypi-release
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          poetry config pypi-token.pypi $PYPI_TOKEN
+          poetry build
+          poetry publish
