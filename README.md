@@ -81,5 +81,8 @@ If you'd like to contribute, be sure to check out our [contributing guide](./CON
 Thanks goes to these incredible people.
 
 <a href="https://github.com/akhilpandey95/gnnNAS/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=akhilpandey95/gnnNAS" />
+  <img style="border-radius: 50%" src="https://contrib.rocks/image?repo=akhilpandey95/gnnNAS" />
+</a>
+<a href="https://github.com/akhilpandey95/gnnNAS/graphs/contributors">
+  <img style="border-radius: 50%" src="https://contrib.rocks/image?repo=harishsiravuri/kgforge" />
 </a>
