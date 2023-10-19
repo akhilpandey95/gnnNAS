@@ -1,26 +1,27 @@
 # This Source Code Form is subject to the terms of the
-# BSD 2-Clause "Simplified" License. If a copy of the same 
+# BSD 2-Clause "Simplified" License. If a copy of the same
 # was not distributed with this file, You can obtain one at
 # https://github.com/akhilpandey95/gnnNAS/blob/master/LICENSE.
 
-import torch
 import numpy as np
+import torch
 import torch_geometric as pyg
 
+
 class MPNN(torch.nn.Module):
-    """
-    Creates an MPNN model in pytorch geometric
-    """
+    """Creates an MPNN model in pytorch geometric"""
+
     def __init__(
-            self,
-            n_node_features: int,
-            n_edge_features: int,
-            n_hidden: int,
-            n_output: int,
-            MPNN_inp: torch.nn.Module,
-            MPNN_hidden: torch.nn.Module,
-            n_conv_blocks: int,
-            skip_connection: str="plain") -> None:
+        self,
+        n_node_features: int,
+        n_edge_features: int,
+        n_hidden: int,
+        n_output: int,
+        MPNN_inp: torch.nn.Module,
+        MPNN_hidden: torch.nn.Module,
+        n_conv_blocks: int,
+        skip_connection: str = "plain",
+    ) -> None:
         """
         Build the MPNN model
         Parameters
@@ -42,7 +43,7 @@ class MPNN(torch.nn.Module):
         """
         # super class the class structure
         super().__init__()
-        
+
         # set the growth dimension
         self.growth_dimension = n_hidden
 
@@ -69,12 +70,12 @@ class MPNN(torch.nn.Module):
         self.flatten = torch.nn.Sequential(
             torch.nn.Linear(self.growth_dimension, n_hidden),
             torch.nn.ReLU(),
-            torch.nn.Linear(n_hidden, n_output))
-        
-    def forward(self,
-                x: torch.Tensor,
-                edge_index: torch.Tensor,
-                batch_idx: torch.Tensor) -> torch.Tensor:
+            torch.nn.Linear(n_hidden, n_output),
+        )
+
+    def forward(
+        self, x: torch.Tensor, edge_index: torch.Tensor, batch_idx: torch.Tensor
+    ) -> torch.Tensor:
         """
         Process the MPNN model
         Parameters
@@ -111,5 +112,3 @@ class MPNN(torch.nn.Module):
 
         # return the output
         return out
-
-

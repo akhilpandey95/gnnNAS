@@ -1,80 +1,85 @@
-# MetalgPy + gnnNAS
+<h1 align="center">
+  <br>
+  <img src="https://github.com/akhilpandey95/gnnNAS/blob/main/images/gnnnas-logo.png?raw=true"  width="400" height="400" alt="gnnnas logo"/>
+  <br>
+</h1>
 
-## About
-The project focusses on leveraging the general purpose library [MetalgPy](https://github.com/deephyper/metalgpy) to write symbolized ML programs capable of leveraging graph hyperparameters for better surrogate model fitting. Our goal was to use `MetalgPy` to search for a representation learning algorithm for graph structures.
+<h2 align="center">Library to write symbolic programs to generate expressive message passing neural networks</h2>
 
-## Packages
+<h1 align="center"><a href="https://akhilpandey95.github.io/gnnNAS/">kgforge Documentation</h1>
 
-- `PyTorch`
-- `PyTorch-Geometric`
-- `MetalgPy`
+<p align="center">
 
-```shell
-# Install Pytorch
-pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+   <a alt="Tests" href="https://github.com/akhilpandey95/gnnNAS/actions/workflows/publish-to-pypi.yml/badge.svg">
+      <img src="https://github.com/akhilpandey95/kgforge/actions/workflows/publish-to-pypi.yml/badge.svg?branch=main">
+  </a>
+  <img alt="Code Style" src="https://img.shields.io/badge/  code%20style-black-000000.svg" />
+  <a href="https://www.python.org/downloads/release/python-390/">
+  </a>
+  <a href="https://pypi.org/project/gnnNAS" target="_blank">
+    <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="Supported Python versions">
+  </a>
+  <a href="https://img.shields.io/pypi/dw/gnnNAS" target="_blank">
+    <img src="https://img.shields.io/pypi/dw/gnnNAS" alt="Downloads per week">
+  </a>
+  <a href="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  </a>
+  <a href="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" target="_blank">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="Contribute">
+  </a>
 
-# Install Pytorch Geometric
-pip install -q torch-scatter -f https://data.pyg.org/whl/torch-${TORCH}.html
-pip install -q torch-sparse -f https://data.pyg.org/whl/torch-${TORCH}.html
-pip install -q git+https://github.com/pyg-team/pytorch_geometric.git
+</p>
 
-# Install DeepHyper/MetalgPy
-pip install -q metalgpy
+<p align="center">
+  <a href="#what-is-it">What is it?</a> •
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a>  •
+  <a href="#contributing">Contributing</a>
+</p>
 
-# Install rdkit for the datasets
-pip install -q rdkit-pypi
+## What is it?
+`kgforge` is a library which automates the generation of knowledge graphs from scholarly text.
+
+## Features:
+  - **TODO**: TODO: Description.
+
+## Installation:
+
+### Poetry
+
+```bash
+poetry add kgforge
 ```
 
-## Datasets
+### Pip
 
-We use three benchmark datasets
+```bash
+pip install kgforge
+```
 
-- `GNN Benchmark Dataset` 
-- `Planetoid-1`
-- `MoleculeNet`
+Setup your local environment:
 
-#### GNN Benchmark Dataset
+Any necessary environment variables description:
 
-A variety of artificially and semi-artificially generated graph datasets. It is composed of datasets such as `PATTERN`, `CLUSTER`, `MNIST`, `CIFAR-10`, `TSP`, `CSL`. 
 
-`Reference`: https://arxiv.org/abs/2003.00982
+```shell
+export SAMPLE_ENV_VARIABLE=${VALUE}
+```
 
-`Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
+## Usage
 
-#### Planetoid-1:
+Now that `kgforge` is installed, you're ready to start using it!
 
-`Planetoid` dataset comprising of citation network datasets `Cora`, `Citeseer`, and `Pubmed`. These are three benchmark datasets used for semi-supervised node classification tasks. Each of the mentioned graph datasets contains bag-of-words representation of documents and citation links between the documents
+It's time to point you to the official [Documentation Website](https://akhilpandey95.github.io/gnnNAS/) for more information on how to use `kgforge`
 
-`Reference`: https://arxiv.org/pdf/1603.08861.pdf
 
-`Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
+## Contributing
+If you'd like to contribute, be sure to check out our [contributing guide](./CONTRIBUTING.md)! If you'd like to work on any outstanding items, check out the `roadmap` section in the docs and get started :smiley:
 
-#### MoleculeNet:
+Thanks goes to these incredible people.
 
-`MoleculetNet`: MoleculeNet is a benchmark specially designed for testing machine learning methods of molecular properties. As we aim to facilitate the development of molecular machine learning method, this work curates a number of dataset collections, creates a suite of software that implements many known featurizations and previously proposed algorithms. All methods and datasets are integrated as parts of the open source DeepChem package(MIT license).
-
-Within the `MoleculetNet`, we are interested to benchmark, Quantum Mechanics, and Physical chemistry datasets
-
-`Quantum Mechanics`:
-- QM7/QM7b (structure): Electronic properties(atomization energy, HOMO/LUMO, etc.) determined using ab-initio density functional theory(DFT).
-- QM8 (structure): Electronic spectra and excited state energy of small molecules calculated by multiple quantum mechanic methods.
-- QM9 (structure): Geometric,  energetic, electronic and thermodynamic properties of DFT-modelled small molecules.
-
-`Physical chemistry`:
-- ESOL: Water solubility data(log solubility in mols per litre) for common organic small molecules.
-- FreeSolv: Experimental and calculated hydration free energy of small molecules in water.
-- Lipophilicity: Experimental results of octanol/water distribution coefficient(logD at pH 7.4).
-
-`Reference`: https://moleculenet.org/datasets-1
-
-`Resource`: https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html
-
-## Results
-TBA
-
-## Author
-[Akhil Pandey](https://github.com/akhilpandey95)
-
-## Supervisor
-[Prasanna Balaprakash](https://github.com/pbalapra)
-
+<a href="https://github.com/akhilpandey95/gnnNAS/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=akhilpandey95/gnnNAS" />
+</a>
