@@ -11,7 +11,7 @@
 <p align="center">
 
    <a alt="Tests" href="https://github.com/akhilpandey95/gnnNAS/actions/workflows/publish-to-pypi.yml/badge.svg">
-      <img src="https://github.com/akhilpandey95/kgforge/actions/workflows/publish-to-pypi.yml/badge.svg?branch=main">
+      <img src="https://github.com/akhilpandey95/gnnNAS/actions/workflows/publish-to-pypi.yml/badge.svg">
   </a>
   <img alt="Code Style" src="https://img.shields.io/badge/  code%20style-black-000000.svg" />
   <a href="https://www.python.org/downloads/release/python-390/">
@@ -19,8 +19,8 @@
   <a href="https://pypi.org/project/gnnNAS" target="_blank">
     <img src="https://img.shields.io/badge/python-3.10-blue.svg" alt="Supported Python versions">
   </a>
-  <a href="https://img.shields.io/pypi/dw/gnnNAS" target="_blank">
-    <img src="https://img.shields.io/pypi/dw/gnnNAS" alt="Downloads per week">
+  <a href="https://img.shields.io/pypi/dw/gnnnas" target="_blank">
+    <img src="https://img.shields.io/pypi/dw/gnnnas" alt="Downloads per week">
   </a>
   <a href="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
