@@ -83,6 +83,3 @@ Thanks goes to these incredible people.
 <a href="https://github.com/akhilpandey95/gnnNAS/graphs/contributors">
   <img style="border-radius: 50%" src="https://contrib.rocks/image?repo=akhilpandey95/gnnNAS" />
 </a>
-<a href="https://github.com/akhilpandey95/gnnNAS/graphs/contributors">
-  <img style="border-radius: 50%" src="https://contrib.rocks/image?repo=harishsiravuri/kgforge" />
-</a>
